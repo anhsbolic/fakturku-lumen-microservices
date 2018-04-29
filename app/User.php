@@ -56,4 +56,13 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsToMany(Supplier::class, 'user_supplier', 'user_id', 'supplier_id')->withTimestamps();
     }
+
+    /**
+     * Many-to-Many Relation with Cost
+     *
+     */
+    public function costs()
+    {
+        return $this->belongsToMany(Cost::class, 'user_cost', 'user_id', 'cost_id')->withTimestamps();
+    }
 }

@@ -50,3 +50,15 @@ $router->get('api/user/{userId}/supplier/{supplierId}','SupplierController@getUs
 $router->post('api/user/{userId}/supplier','SupplierController@saveUserSupplier');
 $router->put('api/user/{userId}/supplier/{supplierId}','SupplierController@updateUserSupplier');
 $router->delete('api/user/{userId}/supplier/{supplierId}','SupplierController@deleteUserSupplier');
+
+/*
+|--------------------------------------------------------------------------
+| Cost API Routes
+|--------------------------------------------------------------------------
+*/
+
+$router->get('api/user/{userId}/cost','CostController@getUserCostList');
+$router->get('api/user/{userId}/cost/{costId}','CostController@getUserCost');
+$router->post('api/user/{userId}/cost','CostController@saveUserCost');
+$router->put('api/user/{userId}/cost/{costId}','CostController@updateUserCost');
+$router->delete('api/user/{userId}/cost/{costId}','CostController@deleteUserCost');
