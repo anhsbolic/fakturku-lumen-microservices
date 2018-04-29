@@ -27,6 +27,15 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $hidden = [
-        'password',
+        'password', 'pivot',
     ];
+
+    /**
+     * Many-to-Many Relation with Product 
+     *
+     */
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'user_product', 'user_id', 'product_id')->withTimestamps();
+    }
 }
