@@ -31,12 +31,30 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     ];
 
     /**
+     * Many-to-Many Relation with Company
+     *
+     */
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class, 'user_company', 'user_id', 'company_id')->withTimestamps();
+    }
+
+    /**
      * Many-to-Many Relation with Product 
      *
      */
     public function products()
     {
         return $this->belongsToMany(Product::class, 'user_product', 'user_id', 'product_id')->withTimestamps();
+    }
+
+    /**
+     * Many-to-Many Relation with Cost
+     *
+     */
+    public function costs()
+    {
+        return $this->belongsToMany(Cost::class, 'user_cost', 'user_id', 'cost_id')->withTimestamps();
     }
 
     /**
@@ -56,13 +74,5 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsToMany(Supplier::class, 'user_supplier', 'user_id', 'supplier_id')->withTimestamps();
     }
-
-    /**
-     * Many-to-Many Relation with Cost
-     *
-     */
-    public function costs()
-    {
-        return $this->belongsToMany(Cost::class, 'user_cost', 'user_id', 'cost_id')->withTimestamps();
-    }
+   
 }
