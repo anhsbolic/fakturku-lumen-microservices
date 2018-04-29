@@ -15,7 +15,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-
 /*
 |--------------------------------------------------------------------------
 | Product API Routes
@@ -27,3 +26,15 @@ $router->get('api/user/{userId}/product/{productId}','ProductController@getUserP
 $router->post('api/user/{userId}/product','ProductController@saveUserProduct');
 $router->put('api/user/{userId}/product/{productId}','ProductController@updateUserProduct');
 $router->delete('api/user/{userId}/product/{productId}','ProductController@deleteUserProduct');
+
+/*
+|--------------------------------------------------------------------------
+| Costumer API Routes
+|--------------------------------------------------------------------------
+*/
+
+$router->get('api/user/{userId}/costumer','CostumerController@getUserCostumerList');
+$router->get('api/user/{userId}/costumer/{costumerId}','CostumerController@getUserCostumer');
+$router->post('api/user/{userId}/costumer','CostumerController@saveUserCostumer');
+$router->put('api/user/{userId}/costumer/{costumerId}','CostumerController@updateUserCostumer');
+$router->delete('api/user/{userId}/costumer/{costumerId}','CostumerController@deleteUserCostumer');
