@@ -38,3 +38,15 @@ $router->get('api/user/{userId}/costumer/{costumerId}','CostumerController@getUs
 $router->post('api/user/{userId}/costumer','CostumerController@saveUserCostumer');
 $router->put('api/user/{userId}/costumer/{costumerId}','CostumerController@updateUserCostumer');
 $router->delete('api/user/{userId}/costumer/{costumerId}','CostumerController@deleteUserCostumer');
+
+/*
+|--------------------------------------------------------------------------
+| Supplier API Routes
+|--------------------------------------------------------------------------
+*/
+
+$router->get('api/user/{userId}/supplier','SupplierController@getUserSupplierList');
+$router->get('api/user/{userId}/supplier/{supplierId}','SupplierController@getUserSupplier');
+$router->post('api/user/{userId}/supplier','SupplierController@saveUserSupplier');
+$router->put('api/user/{userId}/supplier/{supplierId}','SupplierController@updateUserSupplier');
+$router->delete('api/user/{userId}/supplier/{supplierId}','SupplierController@deleteUserSupplier');

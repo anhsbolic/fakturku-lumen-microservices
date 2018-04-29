@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Costumer extends Model
+class Supplier extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -34,6 +34,6 @@ class Costumer extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_costumer', 'costumer_id', 'user_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'user_supplier', 'supplier_id', 'user_id')->withTimestamps();
     }
 }
