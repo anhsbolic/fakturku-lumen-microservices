@@ -14,10 +14,10 @@ class CreateUserCostTable extends Migration
     public function up()
     {
         Schema::create('user_cost', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('cost_id')->unsigned();
+            $table->bigInteger('cost_id')->unsigned();
             $table->foreign('cost_id')->references('id')->on('costs')->onDelete('cascade');
             $table->timestamps();
         });

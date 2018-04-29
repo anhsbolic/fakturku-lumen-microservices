@@ -14,10 +14,10 @@ class CreateUserCostumerTable extends Migration
     public function up()
     {
         Schema::create('user_costumer', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('costumer_id')->unsigned();
+            $table->bigInteger('costumer_id')->unsigned();
             $table->foreign('costumer_id')->references('id')->on('costumers')->onDelete('cascade');
             $table->timestamps();
         });

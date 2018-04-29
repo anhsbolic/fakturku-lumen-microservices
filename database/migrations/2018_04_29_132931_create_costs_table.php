@@ -14,10 +14,10 @@ class CreateCostsTable extends Migration
     public function up()
     {
         Schema::create('costs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('unit_cost');
-            $table->text('info');
+            $table->bigInteger('unit_cost')->nullable();
+            $table->text('info')->nullable();
             $table->timestamps();
         });
     }
