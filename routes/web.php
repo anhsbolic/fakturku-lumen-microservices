@@ -14,3 +14,16 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Product API Routes
+|--------------------------------------------------------------------------
+*/
+
+$router->get('api/user/{userId}/product','ProductController@getUserProductList');
+$router->get('api/user/{userId}/product/{productId}','ProductController@getUserProduct');
+$router->post('api/user/{userId}/product','ProductController@saveUserProduct');
+$router->put('api/user/{userId}/product/{productId}','ProductController@updateUserProduct');
+$router->delete('api/user/{userId}/product/{productId}','ProductController@deleteUserProduct');
